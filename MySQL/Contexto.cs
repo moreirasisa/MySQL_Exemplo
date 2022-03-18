@@ -1,10 +1,11 @@
-﻿using MySQL.Entidades;
+﻿using Microsoft.EntityFrameworkCore;
+using MySQL.Entidades;
 
 namespace MySQL
 {
-    public class Contexto
+    public class Contexto : DbContext
     {
-        public Contexto(DbContextoption<Contexto> option) : base(option) { }
+        public Contexto(DbContextOptions<Contexto> option) : base(option) { }
 
         public DbSet<Usuario> USUARIOS { get; set; }
     }
